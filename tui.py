@@ -3,10 +3,25 @@ from textual.app import App
 from textual.widgets import Input
 from textual.widgets import Label
 from textual.widgets import Button
+# what if i was writing css but i didn't know what i was doing?
+# well that's exactly what i'm going to do
+CSS = """
+Screen { align: center top; }
+Input { width: 40; border: round $accent; }
+#worked_hours, #future_hours { display: none; }
+"""
 # define app/class?
 class timestub(App):
     def compose(self):
-        yield Label("timestub ~ pay calculator")
+        yield Label(r"""
+        ▐▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▌
+        ▐   _     _                            _             _       |   ▌
+        ▐  | |_  (_)  _ __ ___     ___   ___  | |_   _   _  | |__    |   ▌
+        ▐  | __| | | | '_ ` _ \   / _ \ / __| | __| | | | | | '_ \   |   ▌
+        ▐  | |_  | | | | | | | | |  __/ \__ \ | |_  | |_| | | |_) |  |   ▌
+        ▐   \__| |_| |_| |_| |_|  \___| |___/  \__|  \__,_| |_.__/   .   ▌
+        ▐▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▌
+        """)
         yield Input(placeholder="what's your hourly wage?",id="hourly_pay")
         yield Input(placeholder="hours worked?", id="worked_hours")
         yield Input(placeholder="hours scheduled in the future?", id="future_hours")
