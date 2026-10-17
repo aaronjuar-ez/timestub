@@ -43,8 +43,11 @@ class timestub(App):
                 the_most_dear_and_the_future_input.focus()
             else:
                 the_most_dear_and_the_future_input.display = False
-                event_button_id_thing.button.disabled = True
-                
+                event_button_id_thing.button.display = False
+                hourly_pay = float(hourly_input.value)
+                worked_hours = float(worked_input.value)
+                future_hours = float(the_most_dear_and_the_future_input.value)
+                self.query_one("#pay_label").update(f"you made ${hourly_pay * worked_hours:.2f} already\n\nyou are predicted to make ${hourly_pay * future_hours:.2f}\n\ntotaling ${(future_hours + worked_hours) * hourly_pay:.2f}!")
 # starts interface/cli
 app = timestub()
 app.run()
