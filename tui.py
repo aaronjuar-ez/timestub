@@ -49,5 +49,8 @@ class timestub(App):
                 future_hours = float(the_most_dear_and_the_future_input.value)
                 self.query_one("#pay_label").update(f"you made ${hourly_pay * worked_hours:.2f} already\n\nyou are predicted to make ${hourly_pay * future_hours:.2f}\n\ntotaling ${(future_hours + worked_hours) * hourly_pay:.2f}!")
 # starts interface/cli
-app = timestub()
-app.run()
+def main():
+    timestub().run()
+
+if __name__ == "__main__":
+    main()
